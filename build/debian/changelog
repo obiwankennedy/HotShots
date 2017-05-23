@@ -1,0 +1,29 @@
+hotshots (2.2.0) unstable; urgency=low
+
+  * Features:
+        - Restore last selection in region and freehand grabbing
+        - Add options to display or not dialog before/after download
+        
+ -- xbee <xbee@xbee.net>  Thu, 12 September 2014 9:00:00 +0100
+
+hotshots (2.1.0) unstable; urgency=low
+
+  * Features:
+        - Speed up launch time
+        - Add option for mouse cursor in snapshot 
+        - Add User defined action on click/double-click tray icon
+        - Editor: add group alignment (vertical/horizontal)
+        - Editor: add rescale background image panel
+        - Change Windows grabbing code on windows platform
+    * Bugs
+        - Editor: correct invalid save/restore position for text item
+
+ -- xbee <xbee@xbee.net>  Thu, 12 February 2014 9:00:00 +0100
+ 
+hotshots (2.0.1) unstable; urgency=low
+
+  * Release 2.0.1 : Initial release of package
+
+ -- xbee <xbee@xbee.net>  Thu, 24 January 2014 9:00:00 +0100
+
+

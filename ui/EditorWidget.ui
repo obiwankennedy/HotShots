@@ -1,0 +1,1652 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>EditorWidgetClass</class>
+ <widget class="QMainWindow" name="EditorWidgetClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>874</width>
+    <height>423</height>
+   </rect>
+  </property>
+  <property name="acceptDrops">
+   <bool>true</bool>
+  </property>
+  <property name="windowTitle">
+   <string>Snapshot editor</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../res/hotshots.qrc">
+    <normaloff>:/editor/editor/editor.png</normaloff>:/editor/editor/editor.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout_3">
+    <property name="margin">
+     <number>1</number>
+    </property>
+    <property name="spacing">
+     <number>2</number>
+    </property>
+    <item row="6" column="0" colspan="3">
+     <spacer name="verticalSpacer">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>161</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="0" column="3" rowspan="7">
+     <widget class="EditorView" name="graphicsView">
+      <property name="acceptDrops">
+       <bool>false</bool>
+      </property>
+      <property name="renderHints">
+       <set>QPainter::Antialiasing|QPainter::TextAntialiasing</set>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="0" colspan="4">
+     <widget class="PaletteBarWidget" name="widgetPalette" native="true">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>20</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="0" colspan="3">
+     <widget class="QFrame" name="frame_2">
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QGridLayout" name="gridLayout">
+       <property name="margin">
+        <number>1</number>
+       </property>
+       <property name="spacing">
+        <number>1</number>
+       </property>
+       <item row="0" column="0">
+        <widget class="WidgetLineWidth" name="frameLineWidth">
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="WidgetDashStyle" name="frameDashType">
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="WidgetFillStyle" name="frameFillStyle">
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="0" column="0" rowspan="2" colspan="3">
+     <widget class="QFrame" name="frame">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <property name="lineWidth">
+       <number>0</number>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <property name="margin">
+        <number>1</number>
+       </property>
+       <property name="spacing">
+        <number>1</number>
+       </property>
+       <item row="4" column="0">
+        <widget class="QToolButton" name="toolButtonCurve">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>22</width>
+           <height>22</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QToolButton" name="toolButtonPolygon">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>22</width>
+           <height>22</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QToolButton" name="toolButtonLine">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>22</width>
+           <height>22</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="1">
+        <widget class="QToolButton" name="toolButtonBlurring">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>22</width>
+           <height>22</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QToolButton" name="toolButtonPolyline">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>22</width>
+           <height>22</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="0">
+        <widget class="QToolButton" name="toolButtonHighlighter">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>22</width>
+           <height>22</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="1">
+        <widget class="QToolButton" name="toolButtonMagnifier">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>22</width>
+           <height>22</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QToolButton" name="toolButtonSelect">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>22</width>
+           <height>22</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QToolButton" name="toolButtonText">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>22</width>
+           <height>22</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="0">
+        <widget class="QToolButton" name="toolButtonImage">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>22</width>
+           <height>22</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QToolButton" name="toolButtonEncircle">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>22</width>
+           <height>22</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="1">
+        <widget class="QToolButton" name="toolButtonEllipse">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>22</width>
+           <height>22</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QToolButton" name="toolButtonCrop">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>22</width>
+           <height>22</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0">
+        <widget class="QToolButton" name="toolButtonRectangle">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>22</width>
+           <height>22</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="0">
+        <widget class="QToolButton" name="toolButtonArrow">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>22</width>
+           <height>22</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="1">
+        <widget class="QToolButton" name="toolButtonTag">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>22</width>
+           <height>22</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="1">
+        <widget class="QToolButton" name="toolButtonFontSizeUp">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>22</width>
+           <height>22</height>
+          </size>
+         </property>
+         <property name="autoRepeat">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="0">
+        <widget class="QToolButton" name="toolButtonFontSizeDown">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>22</width>
+           <height>22</height>
+          </size>
+         </property>
+         <property name="autoRepeat">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="10" column="0" colspan="2">
+        <widget class="QClickLabel" name="labelFontSize">
+         <property name="maximumSize">
+          <size>
+           <width>90</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string>Preview font</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+         <property name="wordWrap">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="3" column="0" colspan="3">
+     <widget class="QWidget" name="widget" native="true">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_4">
+       <property name="horizontalSpacing">
+        <number>1</number>
+       </property>
+       <property name="verticalSpacing">
+        <number>2</number>
+       </property>
+       <property name="margin">
+        <number>3</number>
+       </property>
+       <item row="0" column="0">
+        <widget class="QPushButton" name="pushButtonResetColor">
+         <property name="toolTip">
+          <string>Reset colors</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="../res/hotshots.qrc">
+           <normaloff>:/editor/editor/color_reset.png</normaloff>:/editor/editor/color_reset.png</iconset>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QPushButton" name="pushButtonSwapColor">
+         <property name="toolTip">
+          <string>swap background and foreground colors</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="../res/hotshots.qrc">
+           <normaloff>:/editor/editor/swap_color.png</normaloff>:/editor/editor/swap_color.png</iconset>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0" colspan="2">
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <widget class="QwwTwoColorIndicator" name="qwwTwoColorIndicator">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="toolTip">
+            <string>Foreground and background colors</string>
+           </property>
+           <property name="active">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>874</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <widget class="QToolBar" name="toolBarMain">
+   <property name="windowTitle">
+    <string>Main actions</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionQuit"/>
+   <addaction name="separator"/>
+   <addaction name="actionLoad"/>
+   <addaction name="actionNewDocument"/>
+   <addaction name="separator"/>
+   <addaction name="actionImportClipboard"/>
+   <addaction name="actionSave"/>
+   <addaction name="actionSaveAs"/>
+   <addaction name="actionCopyToClipboard"/>
+   <addaction name="separator"/>
+   <addaction name="actionExport"/>
+   <addaction name="actionUpload"/>
+   <addaction name="actionPrint"/>
+   <addaction name="separator"/>
+   <addaction name="actionFitToView"/>
+   <addaction name="actionResetScale"/>
+  </widget>
+  <widget class="QToolBar" name="toolBarEdit">
+   <property name="windowTitle">
+    <string>Edition actions</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionUndo"/>
+   <addaction name="actionRedo"/>
+   <addaction name="actionAddFrame"/>
+   <addaction name="actionRescaleBackgroundImage"/>
+   <addaction name="actionSetAlignment"/>
+   <addaction name="actionShadow"/>
+   <addaction name="actionItemUp"/>
+   <addaction name="actionItemTop"/>
+   <addaction name="actionItemDown"/>
+   <addaction name="actionItemBottom"/>
+   <addaction name="actionDuplicate"/>
+   <addaction name="actionClear"/>
+   <addaction name="actionDelete"/>
+  </widget>
+  <action name="actionSelect">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../res/hotshots.qrc">
+     <normaloff>:/editor/editor/cursor.png</normaloff>:/editor/editor/cursor.png</iconset>
+   </property>
+   <property name="text">
+    <string>Select item</string>
+   </property>
+   <property name="toolTip">
+    <string>Select</string>
+   </property>
+   <property name="shortcut">
+    <string>Esc</string>
+   </property>
+  </action>
+  <action name="actionText">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../res/hotshots.qrc">
+     <normaloff>:/editor/editor/text.png</normaloff>:/editor/editor/text.png</iconset>
+   </property>
+   <property name="text">
+    <string>Text item</string>
+   </property>
+   <property name="toolTip">
+    <string>Draw text</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true"/>
+   </property>
+  </action>
+  <action name="actionLine">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../res/hotshots.qrc">
+     <normaloff>:/editor/editor/line.png</normaloff>:/editor/editor/line.png</iconset>
+   </property>
+   <property name="text">
+    <string>Line item</string>
+   </property>
+   <property name="toolTip">
+    <string>Draw a simple line</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true"/>
+   </property>
+  </action>
+  <action name="actionEncircle">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../res/hotshots.qrc">
+     <normaloff>:/editor/editor/encircle.png</normaloff>:/editor/editor/encircle.png</iconset>
+   </property>
+   <property name="text">
+    <string>Encircle item</string>
+   </property>
+   <property name="toolTip">
+    <string>Encircle</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true"/>
+   </property>
+  </action>
+  <action name="actionPolyline">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../res/hotshots.qrc">
+     <normaloff>:/editor/editor/polygon_unfilled.png</normaloff>:/editor/editor/polygon_unfilled.png</iconset>
+   </property>
+   <property name="text">
+    <string>Polyline item</string>
+   </property>
+   <property name="toolTip">
+    <string>Draw a polyline</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true"/>
+   </property>
+  </action>
+  <action name="actionPolygon">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../res/hotshots.qrc">
+     <normaloff>:/editor/editor/polygon_diagonal.png</normaloff>:/editor/editor/polygon_diagonal.png</iconset>
+   </property>
+   <property name="text">
+    <string>Polygon item</string>
+   </property>
+   <property name="toolTip">
+    <string>Draw a polygon</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true"/>
+   </property>
+  </action>
+  <action name="actionCurve">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../res/hotshots.qrc">
+     <normaloff>:/editor/editor/curve.png</normaloff>:/editor/editor/curve.png</iconset>
+   </property>
+   <property name="text">
+    <string>Curve item</string>
+   </property>
+   <property name="toolTip">
+    <string>Draw a curve</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true"/>
+   </property>
+  </action>
+  <action name="actionCrop">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../res/hotshots.qrc">
+     <normaloff>:/editor/editor/crop.png</normaloff>:/editor/editor/crop.png</iconset>
+   </property>
+   <property name="text">
+    <string>Crop item</string>
+   </property>
+   <property name="toolTip">
+    <string>Crop background image</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true"/>
+   </property>
+  </action>
+  <action name="actionRectangle">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../res/hotshots.qrc">
+     <normaloff>:/editor/editor/rectangle.png</normaloff>:/editor/editor/rectangle.png</iconset>
+   </property>
+   <property name="text">
+    <string>Rectangle item</string>
+   </property>
+   <property name="toolTip">
+    <string>Draw a rectangle</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true"/>
+   </property>
+  </action>
+  <action name="actionEllipse">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../res/hotshots.qrc">
+     <normaloff>:/editor/editor/ellipse.png</normaloff>:/editor/editor/ellipse.png</iconset>
+   </property>
+   <property name="text">
+    <string>Ellipse item</string>
+   </property>
+   <property name="toolTip">
+    <string>Draw an ellipse</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true"/>
+   </property>
+  </action>
+  <action name="actionArrow">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../res/hotshots.qrc">
+     <normaloff>:/editor/editor/arrowshapes.png</normaloff>:/editor/editor/arrowshapes.png</iconset>
+   </property>
+   <property name="text">
+    <string>Arrow item</string>
+   </property>
+   <property name="toolTip">
+    <string>Draw an arrow</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true"/>
+   </property>
+  </action>
+  <action name="actionTag">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../res/hotshots.qrc">
+     <normaloff>:/editor/editor/tag.png</normaloff>:/editor/editor/tag.png</iconset>
+   </property>
+   <property name="text">
+    <string>Tag item</string>
+   </property>
+   <property name="toolTip">
+    <string>Draw a numbered tag</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true"/>
+   </property>
+  </action>
+  <action name="actionHighlighter">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../res/hotshots.qrc">
+     <normaloff>:/editor/editor/highlighter.png</normaloff>:/editor/editor/highlighter.png</iconset>
+   </property>
+   <property name="text">
+    <string>Highlighter item</string>
+   </property>
+   <property name="toolTip">
+    <string>Highlight</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true"/>
+   </property>
+  </action>
+  <action name="actionMagnifier">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../res/hotshots.qrc">
+     <normaloff>:/editor/editor/magnifier.png</normaloff>:/editor/editor/magnifier.png</iconset>
+   </property>
+   <property name="text">
+    <string>Magnifier item</string>
+   </property>
+   <property name="toolTip">
+    <string>Magnifier</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true"/>
+   </property>
+  </action>
+  <action name="actionImage">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../res/hotshots.qrc">
+     <normaloff>:/editor/editor/photo.png</normaloff>:/editor/editor/photo.png</iconset>
+   </property>
+   <property name="text">
+    <string>Image item</string>
+   </property>
+   <property name="toolTip">
+    <string>Add an image</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true"/>
+   </property>
+  </action>
+  <action name="actionBlurring">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../res/hotshots.qrc">
+     <normaloff>:/editor/editor/blurring.png</normaloff>:/editor/editor/blurring.png</iconset>
+   </property>
+   <property name="text">
+    <string>Blur item</string>
+   </property>
+   <property name="toolTip">
+    <string>Blur</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true"/>
+   </property>
+  </action>
+  <action name="actionFontSizeDown">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../res/hotshots.qrc">
+     <normaloff>:/editor/editor/font_down.png</normaloff>:/editor/editor/font_down.png</iconset>
+   </property>
+   <property name="text">
+    <string>Font size down</string>
+   </property>
+   <property name="toolTip">
+    <string>Decrease font size</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true"/>
+   </property>
+  </action>
+  <action name="actionFontSizeUp">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../res/hotshots.qrc">
+     <normaloff>:/editor/editor/font_up.png</normaloff>:/editor/editor/font_up.png</iconset>
+   </property>
+   <property name="text">
+    <string>Font size up</string>
+   </property>
+   <property name="toolTip">
+    <string>Increase font size</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true"/>
+   </property>
+  </action>
+  <action name="actionFont">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>aAbB...</string>
+   </property>
+   <property name="toolTip">
+    <string>Change font</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true"/>
+   </property>
+  </action>
+  <action name="actionQuit">
+   <property name="icon">
+    <iconset resource="../res/hotshots.qrc">
+     <normaloff>:/editor/editor/icon_quit.png</normaloff>:/editor/editor/icon_quit.png</iconset>
+   </property>
+   <property name="text">
+    <string>Quit</string>
+   </property>
+   <property name="toolTip">
+    <string>Quit editor</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true"/>
+   </property>
+  </action>
+  <action name="actionLoad">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../res/hotshots.qrc">
+     <normaloff>:/editor/editor/folder.png</normaloff>:/editor/editor/folder.png</iconset>
+   </property>
+   <property name="text">
+    <string>Load</string>
+   </property>
+   <property name="toolTip">
+    <string>Open a  file</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true"/>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::ApplicationSpecificRole</enum>
+   </property>
+  </action>
+  <action name="actionNewDocument">
+   <property name="icon">
+    <iconset resource="../res/hotshots.qrc">
+     <normaloff>:/editor/editor/document_new.png</normaloff>:/editor/editor/document_new.png</iconset>
+   </property>
+   <property name="text">
+    <string>New document</string>
+   </property>
+   <property name="toolTip">
+    <string>New document</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true"/>
+   </property>
+  </action>
+  <action name="actionImportClipboard">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../res/hotshots.qrc">
+     <normaloff>:/editor/editor/clipboard_next.png</normaloff>:/editor/editor/clipboard_next.png</iconset>
+   </property>
+   <property name="text">
+    <string>Import clipboard</string>
+   </property>
+   <property name="toolTip">
+    <string>Import image from clipboard</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true"/>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../res/hotshots.qrc">
+     <normaloff>:/editor/editor/save.png</normaloff>:/editor/editor/save.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save</string>
+   </property>
+   <property name="toolTip">
+    <string>Save edition</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true"/>
+   </property>
+  </action>
+  <action name="actionSaveAs">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../res/hotshots.qrc">
+     <normaloff>:/editor/editor/save_as.png</normaloff>:/editor/editor/save_as.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save as</string>
+   </property>
+   <property name="toolTip">
+    <string>Save edition as</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true"/>
+   </property>
+  </action>
+  <action name="actionCopyToClipboard">
+   <property name="icon">
+    <iconset resource="../res/hotshots.qrc">
+     <normaloff>:/editor/editor/clipboard.png</normaloff>:/editor/editor/clipboard.png</iconset>
+   </property>
+   <property name="text">
+    <string>Copy to clipboard</string>
+   </property>
+   <property name="toolTip">
+    <string>Copy to clipboard</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true"/>
+   </property>
+  </action>
+  <action name="actionExport">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../res/hotshots.qrc">
+     <normaloff>:/editor/editor/export1.png</normaloff>:/editor/editor/export1.png</iconset>
+   </property>
+   <property name="text">
+    <string>Export</string>
+   </property>
+   <property name="toolTip">
+    <string>Export image</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true"/>
+   </property>
+  </action>
+  <action name="actionUpload">
+   <property name="icon">
+    <iconset resource="../res/hotshots.qrc">
+     <normaloff>:/editor/editor/upload.png</normaloff>:/editor/editor/upload.png</iconset>
+   </property>
+   <property name="text">
+    <string>Upload</string>
+   </property>
+   <property name="toolTip">
+    <string>Upload the image to the web</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true"/>
+   </property>
+  </action>
+  <action name="actionPrint">
+   <property name="icon">
+    <iconset resource="../res/hotshots.qrc">
+     <normaloff>:/hotshots/printer.png</normaloff>:/hotshots/printer.png</iconset>
+   </property>
+   <property name="text">
+    <string>Print</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true"/>
+   </property>
+  </action>
+  <action name="actionFitToView">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../res/hotshots.qrc">
+     <normaloff>:/editor/editor/icon_magfit.png</normaloff>:/editor/editor/icon_magfit.png</iconset>
+   </property>
+   <property name="text">
+    <string>Fit to view</string>
+   </property>
+   <property name="toolTip">
+    <string>Scale to fit window</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true"/>
+   </property>
+  </action>
+  <action name="actionResetScale">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../res/hotshots.qrc">
+     <normaloff>:/editor/editor/icon_mag1.png</normaloff>:/editor/editor/icon_mag1.png</iconset>
+   </property>
+   <property name="text">
+    <string>Reset scale</string>
+   </property>
+   <property name="toolTip">
+    <string>Reset scale</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true"/>
+   </property>
+  </action>
+  <action name="actionUndo">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../res/hotshots.qrc">
+     <normaloff>:/editor/editor/undo.png</normaloff>:/editor/editor/undo.png</iconset>
+   </property>
+   <property name="text">
+    <string>Undo</string>
+   </property>
+   <property name="toolTip">
+    <string>Undo the last action</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true"/>
+   </property>
+  </action>
+  <action name="actionRedo">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../res/hotshots.qrc">
+     <normaloff>:/editor/editor/redo.png</normaloff>:/editor/editor/redo.png</iconset>
+   </property>
+   <property name="text">
+    <string>Redo</string>
+   </property>
+   <property name="toolTip">
+    <string>Redo the last undo action</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true"/>
+   </property>
+  </action>
+  <action name="actionAddFrame">
+   <property name="icon">
+    <iconset resource="../res/hotshots.qrc">
+     <normaloff>:/hotshots/frame.png</normaloff>:/hotshots/frame.png</iconset>
+   </property>
+   <property name="text">
+    <string>Add frame</string>
+   </property>
+   <property name="toolTip">
+    <string>Add a post effect to background image</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true"/>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::ApplicationSpecificRole</enum>
+   </property>
+  </action>
+  <action name="actionShadow">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../res/hotshots.qrc">
+     <normaloff>:/editor/editor/shape_withshadow.png</normaloff>
+     <normalon>:/editor/editor/shape_withoutshadow.png</normalon>:/editor/editor/shape_withshadow.png</iconset>
+   </property>
+   <property name="text">
+    <string>add shadow</string>
+   </property>
+   <property name="toolTip">
+    <string>Enable/Disable item's shadow</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true"/>
+   </property>
+  </action>
+  <action name="actionItemUp">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../res/hotshots.qrc">
+     <normaloff>:/editor/editor/arrow_up_blue.png</normaloff>:/editor/editor/arrow_up_blue.png</iconset>
+   </property>
+   <property name="text">
+    <string>Item up</string>
+   </property>
+   <property name="toolTip">
+    <string>Push selected elements up</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true"/>
+   </property>
+  </action>
+  <action name="actionItemDown">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../res/hotshots.qrc">
+     <normaloff>:/editor/editor/arrow_down_blue.png</normaloff>:/editor/editor/arrow_down_blue.png</iconset>
+   </property>
+   <property name="text">
+    <string>Item down</string>
+   </property>
+   <property name="toolTip">
+    <string>Push selected elements down</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true"/>
+   </property>
+  </action>
+  <action name="actionDuplicate">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../res/hotshots.qrc">
+     <normaloff>:/editor/editor/duplicate.png</normaloff>:/editor/editor/duplicate.png</iconset>
+   </property>
+   <property name="text">
+    <string>Duplicate items</string>
+   </property>
+   <property name="toolTip">
+    <string>Duplicate selected element</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true"/>
+   </property>
+  </action>
+  <action name="actionClear">
+   <property name="icon">
+    <iconset resource="../res/hotshots.qrc">
+     <normaloff>:/editor/editor/trash.png</normaloff>:/editor/editor/trash.png</iconset>
+   </property>
+   <property name="text">
+    <string>Clear items</string>
+   </property>
+   <property name="toolTip">
+    <string>Erase all elements</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true"/>
+   </property>
+  </action>
+  <action name="actionDelete">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../res/hotshots.qrc">
+     <normaloff>:/editor/editor/delete.png</normaloff>:/editor/editor/delete.png</iconset>
+   </property>
+   <property name="text">
+    <string>Delete items</string>
+   </property>
+   <property name="toolTip">
+    <string>Delete selected elements</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true">Del</string>
+   </property>
+  </action>
+  <action name="actionNoPostEffect">
+   <property name="icon">
+    <iconset resource="../res/hotshots.qrc">
+     <normaloff>:/hotshots/frame.png</normaloff>:/hotshots/frame.png</iconset>
+   </property>
+   <property name="text">
+    <string>No post effect</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true"/>
+   </property>
+  </action>
+  <action name="actionSimpleDropShadow">
+   <property name="icon">
+    <iconset resource="../res/hotshots.qrc">
+     <normaloff>:/hotshots/frame_shadow.png</normaloff>:/hotshots/frame_shadow.png</iconset>
+   </property>
+   <property name="text">
+    <string>Simple drop shadow</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true"/>
+   </property>
+  </action>
+  <action name="actionDropShadowWithBorders">
+   <property name="icon">
+    <iconset resource="../res/hotshots.qrc">
+     <normaloff>:/hotshots/frame_border__shadow.png</normaloff>:/hotshots/frame_border__shadow.png</iconset>
+   </property>
+   <property name="text">
+    <string>Drop shadow with borders</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true"/>
+   </property>
+  </action>
+  <action name="actionProgressiveOpacity">
+   <property name="icon">
+    <iconset resource="../res/hotshots.qrc">
+     <normaloff>:/hotshots/frame_progressive.png</normaloff>:/hotshots/frame_progressive.png</iconset>
+   </property>
+   <property name="text">
+    <string>Progressive opacity</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true"/>
+   </property>
+  </action>
+  <action name="actionTornEdge">
+   <property name="icon">
+    <iconset resource="../res/hotshots.qrc">
+     <normaloff>:/hotshots/frame_torn.png</normaloff>:/hotshots/frame_torn.png</iconset>
+   </property>
+   <property name="text">
+    <string>Torn edge</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true"/>
+   </property>
+  </action>
+  <action name="actionItemTop">
+   <property name="icon">
+    <iconset resource="../res/hotshots.qrc">
+     <normaloff>:/editor/editor/arrow_top_blue.png</normaloff>:/editor/editor/arrow_top_blue.png</iconset>
+   </property>
+   <property name="text">
+    <string>Item to top</string>
+   </property>
+   <property name="toolTip">
+    <string>Push selected elements to top</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true"/>
+   </property>
+  </action>
+  <action name="actionItemBottom">
+   <property name="icon">
+    <iconset resource="../res/hotshots.qrc">
+     <normaloff>:/editor/editor/arrow_bottom_blue.png</normaloff>:/editor/editor/arrow_bottom_blue.png</iconset>
+   </property>
+   <property name="text">
+    <string>Item to bottom</string>
+   </property>
+   <property name="toolTip">
+    <string>Push selected elements to bottom</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true"/>
+   </property>
+  </action>
+  <action name="actionAlignGroupLeft">
+   <property name="icon">
+    <iconset resource="../res/hotshots.qrc">
+     <normaloff>:/editor/editor/align_left.png</normaloff>:/editor/editor/align_left.png</iconset>
+   </property>
+   <property name="text">
+    <string>Align group to left</string>
+   </property>
+   <property name="toolTip">
+    <string>Align group to left</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true"/>
+   </property>
+  </action>
+  <action name="actionAlignHorizontalCenter">
+   <property name="icon">
+    <iconset resource="../res/hotshots.qrc">
+     <normaloff>:/editor/editor/align_h_center.png</normaloff>:/editor/editor/align_h_center.png</iconset>
+   </property>
+   <property name="text">
+    <string>Align group to horizontal center</string>
+   </property>
+   <property name="toolTip">
+    <string>Align group to horizontal center</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true"/>
+   </property>
+  </action>
+  <action name="actionAlignVerticalCenter">
+   <property name="icon">
+    <iconset resource="../res/hotshots.qrc">
+     <normaloff>:/editor/editor/align_v_center.png</normaloff>:/editor/editor/align_v_center.png</iconset>
+   </property>
+   <property name="text">
+    <string>Align group to vertical center</string>
+   </property>
+   <property name="toolTip">
+    <string>Align group to vertical center</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true"/>
+   </property>
+  </action>
+  <action name="actionAlignGroupRight">
+   <property name="icon">
+    <iconset resource="../res/hotshots.qrc">
+     <normaloff>:/editor/editor/align_right.png</normaloff>:/editor/editor/align_right.png</iconset>
+   </property>
+   <property name="text">
+    <string>Align group to right</string>
+   </property>
+   <property name="toolTip">
+    <string>Align group to right</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true"/>
+   </property>
+  </action>
+  <action name="actionAlignGroupTop">
+   <property name="icon">
+    <iconset resource="../res/hotshots.qrc">
+     <normaloff>:/editor/editor/align_top.png</normaloff>:/editor/editor/align_top.png</iconset>
+   </property>
+   <property name="text">
+    <string>Align group to top</string>
+   </property>
+   <property name="toolTip">
+    <string>Align group to top</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true"/>
+   </property>
+  </action>
+  <action name="actionAlignGroupBottom">
+   <property name="icon">
+    <iconset resource="../res/hotshots.qrc">
+     <normaloff>:/editor/editor/align_bottom.png</normaloff>:/editor/editor/align_bottom.png</iconset>
+   </property>
+   <property name="text">
+    <string>Align group to bottom</string>
+   </property>
+   <property name="toolTip">
+    <string>Align group to bottom</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true"/>
+   </property>
+  </action>
+  <action name="actionSetAlignment">
+   <property name="icon">
+    <iconset resource="../res/hotshots.qrc">
+     <normaloff>:/editor/editor/alignment.png</normaloff>:/editor/editor/alignment.png</iconset>
+   </property>
+   <property name="text">
+    <string>Set alignment</string>
+   </property>
+   <property name="toolTip">
+    <string>Set alignment to a group</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true"/>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::ApplicationSpecificRole</enum>
+   </property>
+  </action>
+  <action name="actionRescaleBackgroundImage">
+   <property name="icon">
+    <iconset resource="../res/hotshots.qrc">
+     <normaloff>:/editor/editor/rescale.png</normaloff>:/editor/editor/rescale.png</iconset>
+   </property>
+   <property name="text">
+    <string>Rescale background image</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true"/>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>QwwTwoColorIndicator</class>
+   <extends>QWidget</extends>
+   <header>qwwtwocolorindicator.h</header>
+  </customwidget>
+  <customwidget>
+   <class>EditorView</class>
+   <extends>QGraphicsView</extends>
+   <header>EditorView.h</header>
+  </customwidget>
+  <customwidget>
+   <class>WidgetLineWidth</class>
+   <extends>QFrame</extends>
+   <header>WidgetLineWidth.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>WidgetFillStyle</class>
+   <extends>QFrame</extends>
+   <header>WidgetFillStyle.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>WidgetDashStyle</class>
+   <extends>QFrame</extends>
+   <header>WidgetDashStyle.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>QClickLabel</class>
+   <extends>QLabel</extends>
+   <header>QClickLabel.h</header>
+  </customwidget>
+  <customwidget>
+   <class>PaletteBarWidget</class>
+   <extends>QWidget</extends>
+   <header>PaletteBarWidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../res/hotshots.qrc"/>
+ </resources>
+ <connections/>
+</ui>

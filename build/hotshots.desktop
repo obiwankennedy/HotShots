@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=2.2.0
+Name=HotShots
+Comment=Screenshot manager
+Type=Application
+GenericName=Screenshot manager
+TryExec=/usr/local/bin/hotshots
+Exec=/usr/local/bin/hotshots 
+Categories=Utility;Application;
+Icon=/usr/local/share/pixmaps/hotshots.png
+MimeType=application/x-hot;

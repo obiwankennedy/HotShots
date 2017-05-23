@@ -1,0 +1,26 @@
+HotShots is a screenshot tool with some editing features.
+
+porting tasks:
+- OS/2: thanks to Elbert Pol (elbert.pol at gmail dot com)
+
+translations:
+- French: thanks to xbee (xbee at xbee.net)
+- Lithuanian: thanks to Algimantas Margevicius (Margevicius dot Algimantas at gmail dot com)
+- Italian: thanks to Manfrommars (martianpostbox at gmail dot com)
+- Japanese: thanks to piyo.
+- Polish: thanks to Andrzej.
+
+
+Some parts are derived, inspired, extracted or use these great projects:
+* Some images from http://www.webdesignerdepot.com/
+* QKeySequenceWidget: The QKeySequenceWidget is a widget to input a QKeySequence. Artem Galichkin <doomer3d@gmail.com>
+* Ksnapshot from KDE desktop manager
+* ScreenGrab from  Artem 'DOOMer' Galichkin
+* Greenshot (http://getgreenshot.org/)
+* Kaption: Francesco Di Muccio <francesco.dimuccio@gmail.com> (http://code.google.com/p/kaption)
+* Qxt lib: a general purpose libs with many features (http://dev.libqxt.org/libqxt/wiki/Home)
+* Qt json lib: a simple class for parsing JSON data into a QVariant (https://github.com/ereilin/qt-json)
+* QSgml: Sgml for qt (parse HTML) (https://sourceforge.net/projects/sgml-for-qt)
+* ScreenCloud: (http://screencloud.net)
+* Fresh library:  Filipe AZEVEDO aka Nox P@sNox, <pasnox@gmail.com> (https://github.com/pasnox/fresh)
+

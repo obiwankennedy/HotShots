@@ -1,0 +1,42 @@
+* Linux (test on ubuntu/kubuntu/Fedora/openSuse/CentOS/debian)
+Installation of libqxt-dev,libxfixes-dev required (libqxt-devel, libxfixes-devel on fedora)
+
+#> dos2unix tounix.sh
+#> sh ./tounix.sh
+#> cd build
+#> qmake-qt4 -recursive HotShots.pro
+
+or 
+
+#> cd build
+#> qmake -recursive HotShots.pro
+#> make
+#>sudo make install
+
+or with cmake
+#> cd build
+#> cmake .
+#> make
+#>sudo make install
+
+
+You can also use qtcreator from qt-sdk
+
+# For Centos 5.x user (need a valid Qt4 release in order to compil)
+sudo rpm -ivh http://software.freivald.com/centos/software.freivald.com-1.0.0-1.noarch.rpm
+sudo yum update fontconfig fontconfig-devel qt4 qt4-devel qt4-doc qt4-postgresql qt4-odbc qt4-sqlite qt-creator
+sudo rpm --import http://software.freivald.com/centos/RPM-GPG-KEY-software.freivald.com
+
+# Package creation for debian, Ubuntu, Mepis, ...
+#> cd build
+#> dpkg-buildpackage -tc -b -rfakeroot 
+
+* Windows (tested on XP/Seven x64)
+
+Use qtcreator, cmake or the Visual Qt plugin
+There a NSI script for building a setup.exe file in the setup directory
+
+* MAC OSX
+qmake HotShots.pro -r -spec macx-g++ CONFIG+=release CONFIG+=x86_64
+
+

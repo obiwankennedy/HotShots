@@ -1,0 +1,15 @@
+- Bug hunt
+- more translations (I need help !). Send them to xbee at xbee dot net or project is referenced on www.transifex.com, feel free to give help.
+- And Feel free to write feedback, bug-reports and patches to xbee at xbee dot net
+ 
+Ideas:
+
+- Add credential support for web server
+- Auto capture at fixed interval
+- Re Capture with same parameters
+- User defined action list in systray menu
+
+
+
+
+

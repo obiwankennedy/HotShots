@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<mime-info xmlns='http://www.freedesktop.org/standards/shared-mime-info'>
+  <mime-type type="application/x-hot">
+      <comment>HotShots project</comment>
+    <glob pattern="*.hot"/>
+    <icon name="hotshots"/>
+  </mime-type>
+</mime-info>
+

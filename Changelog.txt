@@ -1,0 +1,151 @@
+Version 2.2.0
+* Features
+- Restore last selection in region and freehand grabbing
+- Add options to display or not dialog before/after download
+
+Version 2.1.1
+* Bugs
+- Correct invalid window position in region and freehand capture on linux
+- Editor: correct  an incorrect save/restore for rectangle/ellipse item
+- Editor: change in palette wasn't correctly restored
+- Editor: invalid restore of maximized window state
+
+Version 2.1.0
+* Features:
+- Speed up launch time
+- Add option for mouse cursor in snapshot 
+- Add User defined action on click/double-click tray icon
+- Editor: add group alignment (vertical/horizontal)
+- Editor: add rescale background image panel
+- Change Windows grabbing code on windows platform
+* Bugs
+- Editor: correct invalid save/restore position for text item
+
+Version 2.0.1
+* Features:
+- Enhanced shortcut editor
+- Add portable settings support (--portable option)
+- Add valid debian package files
+* Bugs
+- Correct invalid freehand and region grabbing on linux (multi monitor)
+
+Version 2.0.0
+* Features:
+- Auto-start on Linux
+- Add Portuguese translation. Thanks to Vinícius "A. Jorge".
+- Add German translation. Thanks to dbr.
+- Change default location of translation file on Linux ("/share/hotshots/locale" instead of "/share/locale")
+- Change some icons (best visual consistency)
+- Add launch editor action in systray menu
+- Editor: ability to set background color for some item type (rectangle, ellipse, text)
+- Editor: add a palette of last used of foreground/background color pair
+- Editor: add last saved/loaded file
+- Editor: add "bring to top/bottom" for selected elements 
+- Editor: add "autorepeat" on font size buttons
+- Add MacOSX target
+* Bugs:
+- Editor: add margin to render pixmap (incorrect crop)
+- Editor: correct layout problem on font preview
+- Editor: correct focus problem on text item
+- Editor: correct saved shadow state on some items
+- Editor: correct invalid proposed name for "save as" function
+- Editor: correct text cursor move with keyboard if text item is selected
+- correct a problem with automatic naming of exported image
+
+Version 1.2.1
+* Features:
+- keep window manager settings in some cases (option)
+- Add Romanian translation. Thanks to Jaff.
+- Editor: ESC key force select mode.
+- Editor: add key +/- for zooming
+- Add ability to directly load  a file (.hot/image) in editor with command line
+* Bugs:
+- find the correct path for translation files on linux in some cases
+- incorrect display on multiple screen configuration in some cases
+- incorrect display of splashscreen on linux in some cases
+- auto close function is now disabled by a user action
+Version 1.2.0
+* Features:
+- some layout changes
+- Editor: add multi selection
+- Editor: ability to select shadow on each item
+- Editor: ability to edit some items (polygon, polyline, curve) more easily
+- Editor: ability to add post-effect to image background
+- Uploader: add a user field to define the output template for FTP uploader
+- Ability to directly send to printer a ducument
+- Add Slovak translation. Thanks to Slavko.
+- Add Turkish translation. Thanks to reis33.
+- Add Russian translation. Thanks to Andrey Maraev.
+- Add Sinhala translation. Thanks to chathu151.
+- Add Serbian translation. Thanks to ozzii.
+- Add Czech translation. Thanks to fri.
+- Add Vietnamese translation. Thanks to ppanhh.
+- Add Basque translation. Thanks to Alexander Gabilondo.
+- Add Galician translation. Thanks to  mbouzada .
+- Add Spanish translation. Thanks to Manuel Soriano.
+* Bugs
+- default location not updated in some case
+- add a message box to clear/update background image if annotation exists
+- can't crop an already cropped image
+- start in tray don't works
+- Blurring don't work on small area
+- Font preview can "disrupt" the editor layout
+- Incorrect post effect after crop
+- incorrect loading of translation file in some cases
+- incorrect list of supported image format list in save dialog
+Version 1.1.1
+* Features
+- ability to force a background color for clipboard/web copy
+- ability to launch Internet browser when uploading is done
+- add polish translation. Thanks to Andrzej.
+- some cosmetic changes
+- add an image uploading service (tof.canardpc.com/)
+- use external Qxt lib on linux
+* Bugs 
+- correct untimely exit when HotShots is minimized
+- change default style on linux platformn
+- correct a problem with transparency for clipboard/web copy
+- correct invalid bounding rect when item are outside background image
+Version 1.1.0
+* Features
+- Add direct upload to the web
+- Add torn edge effect
+- Ability keep/remove window decoration for screenshot
+- Add a freehand region capture mode
+- Restructure window grabbing code
+- Add Italian translation. Thanks to Manfrommars (Manfrommars at libero dot it)
+- Add Japanese translation. Thanks to piyo.
+- Ability to play a sound when capture is finished
+- Ability to choose if HotShots must be hide during screen capture
+- Change magnifier size for region capture
+- Editor: ability to export annotated image directly to the clipboard
+- Editor: add duplication function
+- Editor: add a curve shape
+- Editor: add ability to crop base image
+- Editor: change some default sizes
+- Editor: display mouse position in editor (useful for debug !)
+- Editor: display the view scale factor
+- Editor: change somes icons for UI clarification
+
+* Bugs
+- Incorrect save/restore of system shotcuts
+- Incorrect backup/restore of some shapes
+- Incorrect .pro definition for install on Linux
+- Can't find Credits and Changelog on Linux
+- Incorrect magnifier location for region capture
+- Editor: Magnifier can only be defined from top-left to bottom-right
+- Editor: incorrect magnifier resizing
+- Editor: bad support of transparency on saved edition (.hot)
+- Update GPL header (outdated)
+- Incorrect install of langage files on linux (.pro)
+
+Caution: due to an incorrect support of alpha channel (transparency) in previous release, the file format (.hot) has been changed. This modification is automatically take into account but the saved image can have some transparency artifacts.
+
+Version 1.0.1
+* Features
+- add Lithuanian  translation. Thanks to Algimantas Margevicius (Margevicius dot Algimantas at gmail dot com)
+* Bugs
+- Invalid preprocessor directive for OS/2 platform
+- invalid signal/slot connection on OS2 platform
+Version 1.0.0
+- First official release

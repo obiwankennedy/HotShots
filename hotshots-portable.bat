@@ -1,0 +1,1 @@
+HotShots.exe --portable

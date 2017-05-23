@@ -1,0 +1,9 @@
+#!/usr/bin/make -f
+
+DEB_MAKE_PARALLEL=-j4
+DEB_DESTDIR=$(CURDIR)/debian/tmp
+#DEB_CONFIGURE_EXTRA_FLAGS= --prefix=/usr
+#DEB_CONFIGURE_EXTRA_FLAGS=--datadir=/usr/share/?
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+include /usr/share/cdbs/1/class/cmake.mk

@@ -1,0 +1,13 @@
+Source: hotshots
+Section: x11
+Priority: optional
+Maintainer: xbee <xbee@xbee.net>
+Build-Depends: cdbs, debhelper (>= 8), cmake, libqt4-dev, libx11-dev, libqxt-dev, libxfixes-dev
+
+Package: hotshots
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Suggests: 
+Recommends: 
+Description: HotShots is an application for capturing and annotating screenshots.
+

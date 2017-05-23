@@ -1,0 +1,10 @@
+Frequently asked questions
+
+- Q: When I copy a screenshot or an annotation into the clipboard, I get a black border when I paste it into my favorite application.
+- R: Transparency is not well support by a lot of programs, use "Force background color for clipboard/web services" in the parameter panel and choose a background color.
+
+- Q: When I upload a screenshot or an annotation to my favorite web service, I get a black border when I used the given URL.
+- R: Some web services don't support well transparency, use "Force background color for clipboard/web services" in the parameter panel and choose a background color.
+
+- Q: I have lost the main tool bar and I don't known how to restore it.
+- R: There is two solution at your problem. You  can right click on the top of the window (there is a small area between the main panel and the window decorzation) to bring up the menu. You can also use the "--reset-config" as argument of the tool.
