@@ -35,6 +35,7 @@
 
 #include <QDesktopWidget>
 #include <QxtWindowSystem>
+#include <QtWin>
 
 static UINT cxWindowBorder, cyWindowBorder;
 
@@ -117,7 +118,7 @@ static QPixmap grabWindow( HWND hWnd, bool decoration ,QRect & wRect, QString *t
         HGDIOBJ oldPict = SelectObject(hDC, tempPict);
         BitBlt(hDC, 0, 0, w, h, targetDC, 0, 0, SRCCOPY);
         tempPict = (HBITMAP) SelectObject(hDC, oldPict);
-        pm = QPixmap::fromWinHBITMAP(tempPict);
+        pm = QtWin::fromHBITMAP(tempPict);
         wRect.translate(-QPoint(rcClient.left - windowRect.left,rcClient.top - windowRect.top)); // a bit ugly no ?
     }
     else
@@ -128,7 +129,7 @@ static QPixmap grabWindow( HWND hWnd, bool decoration ,QRect & wRect, QString *t
         //BitBlt(hDC, 0, 0, w, h, targetDC, 0, 0, SRCCOPY);
         BitBlt(hDC, 0, 0, wc, hc, targetDC, rcClient.left - windowRect.left,rcClient.top - windowRect.top, SRCCOPY);
         tempPict = (HBITMAP) SelectObject(hDC, oldPict);
-        pm = QPixmap::fromWinHBITMAP(tempPict);
+        pm = QtWin::fromHBITMAP(tempPict);
 
     }
 
@@ -244,7 +245,7 @@ QPixmap WindowGrabber::grabCursor(QPoint &hotSpot)
         DrawIcon(hdcMem, 0,0 , cursorInfo.hCursor);
         // Get the color of the pixel you're interested in.
         COLORREF clr = GetPixel(hdcMem, 0, 0);
-        pm = QPixmap::fromWinHBITMAP(hbmCanvas,QPixmap::Alpha); 
+        pm = QtWin::fromHBITMAP(hbmCanvas, QtWin::HBitmapAlpha);
         // Clean up after yourself.
         SelectObject(hdcMem, hbmOld);
         DeleteObject(hbmCanvas);

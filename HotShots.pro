@@ -1,5 +1,5 @@
 
-QT += core gui xml network widgets multimedia printsupport x11extras
+QT += core gui xml network widgets multimedia printsupport winextras
 
 CONFIG += ordered debug_and_release
 
