@@ -151,6 +151,7 @@ void EditorWidget::updateToolButtons()
     m_ui->toolButtonSelect->setDefaultAction(m_ui->actionSelect);
     m_ui->toolButtonText->setDefaultAction(m_ui->actionText);
     m_ui->toolButtonLine->setDefaultAction(m_ui->actionLine);
+    m_ui->toolButtonLineArrow->setDefaultAction(m_ui->actionLineArrow);
     m_ui->toolButtonEncircle->setDefaultAction(m_ui->actionEncircle);
 
     m_ui->toolButtonPolyline->setDefaultAction(m_ui->actionPolyline);
@@ -172,6 +173,7 @@ void EditorWidget::updateToolButtons()
     groupAction->setExclusive(true);
     groupAction->addAction(m_ui->actionSelect);
     groupAction->addAction(m_ui->actionLine);
+    groupAction->addAction(m_ui->actionLineArrow);
     groupAction->addAction(m_ui->actionEncircle);
     groupAction->addAction(m_ui->actionPolygon);
     groupAction->addAction(m_ui->actionPolyline);
@@ -681,6 +683,11 @@ void EditorWidget::on_actionText_triggered()
 void EditorWidget::on_actionLine_triggered()
 {
     m_scene->setMode("EditorLineItem");
+}
+
+void EditorWidget::on_actionLineArrow_triggered()
+{
+    m_scene->setMode("EditorLineArrowItem");
 }
 
 void EditorWidget::on_actionPolyline_triggered()
