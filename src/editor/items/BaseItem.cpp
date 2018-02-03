@@ -38,8 +38,8 @@ BaseItem::BaseItem(QGraphicsItem *parent)
 {
     m_dropShadowFx = new QGraphicsDropShadowEffect();
     m_dropShadowFx->setColor( QColor(63, 63, 63, 220) );
-    m_dropShadowFx->setBlurRadius(10);
-    m_dropShadowFx->setOffset( QPointF(3, 3) );
+    m_dropShadowFx->setBlurRadius(12);
+    m_dropShadowFx->setOffset( QPointF(2, 2) );
 }
 
 QRectF BaseItem::boundingRect() const

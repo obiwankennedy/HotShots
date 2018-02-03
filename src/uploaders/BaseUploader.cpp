@@ -22,8 +22,8 @@ BaseUploader::BaseUploader(QObject *parent) : QObject(parent),
     m_manager(NULL),
     m_progressDialog(NULL)
 {
-    m_progressDialog = new QProgressDialog();
-    connect( m_progressDialog, SIGNAL( canceled() ), this, SLOT( cancelDownload() ) );
+    // m_progressDialog = new QProgressDialog();
+    // connect( m_progressDialog, SIGNAL( canceled() ), this, SLOT( cancelDownload() ) );
 }
 
 BaseUploader::~BaseUploader()

@@ -44,7 +44,13 @@ EditorTextItem::EditorTextItem(QGraphicsItem *parent)
 
     m_item = new SimpleTextItem(this);
     m_item->setTextInteractionFlags(Qt::TextEditorInteraction);
-    m_item->setGraphicsEffect(m_dropShadowFx);
+    // m_item->setGraphicsEffect(m_dropShadowFx);
+
+    m_text_dropShadowFx = new QGraphicsDropShadowEffect();
+    m_text_dropShadowFx->setColor( QColor(63, 63, 63, 110) );
+    m_text_dropShadowFx->setBlurRadius(5);
+    m_text_dropShadowFx->setOffset( QPointF(1, 1) );
+    m_item->setGraphicsEffect(m_text_dropShadowFx);
 
     QObject::connect( m_item->document(), SIGNAL( contentsChanged() ),this, SLOT( textChanged() ) );
     QObject::connect( m_item, SIGNAL( lostFocus() ),this, SLOT( focusOut() ) );

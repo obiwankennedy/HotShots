@@ -104,6 +104,7 @@ private:
     double m_rotation;
     double m_relativeRotation;
     QPointF m_refRotationPoint;
+    QGraphicsDropShadowEffect *m_text_dropShadowFx;
 };
 
 #endif // _EDITORTEXTITEM_H_

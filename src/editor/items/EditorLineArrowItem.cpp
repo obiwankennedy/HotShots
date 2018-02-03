@@ -163,8 +163,8 @@ QPainterPath EditorLineArrowItem::createArrow(const QPointF &tail, const QPointF
 
     QPainterPath path;
     QPointF px0(0, 0);
-    QPointF px1(-15, 7);
-    QPointF px2(-15, -7);
+    QPointF px1(-10, 5);
+    QPointF px2(-10, -5);
     QPointF px3(-length, 0);
 
     path.lineTo(px0);
