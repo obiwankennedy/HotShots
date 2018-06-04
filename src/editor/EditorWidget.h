@@ -57,6 +57,7 @@ private slots:
     void on_actionSelect_triggered();
     void on_actionText_triggered();
     void on_actionLine_triggered();
+    void on_actionLineArrow_triggered();
     void on_actionPolyline_triggered();
     void on_actionEncircle_triggered();
     void on_actionPolygon_triggered();

@@ -1,5 +1,5 @@
 
-QT += core gui xml network widgets multimedia printsupport x11extras
+QT += core gui xml network widgets multimedia printsupport winextras
 
 CONFIG += ordered debug_and_release
 
@@ -50,6 +50,7 @@ SOURCES += src/3rdparty/qkeysequencewidget/qkeysequencewidget.cpp \
     src/editor/items/EditorPolygonItem.cpp \
     src/editor/items/EditorMagnifierItem.cpp \
     src/editor/items/EditorLineItem.cpp \
+    src/editor/items/EditorLineArrowItem.cpp \
     src/editor/items/EditorImageItem.cpp \
     src/editor/items/EditorHighlighterItem.cpp \
     src/editor/items/EditorEncircleItem.cpp \
@@ -127,6 +128,7 @@ HEADERS  += src/3rdparty/qkeysequencewidget/qkeysequencewidget.h \
     src/editor/items/EditorPolygonItem.h \
     src/editor/items/EditorMagnifierItem.h \
     src/editor/items/EditorLineItem.h \
+    src/editor/items/EditorLineArrowItem.h \
     src/editor/items/EditorImageItem.h \
     src/editor/items/EditorHighlighterItem.h \
     src/editor/items/EditorEncircleItem.h \

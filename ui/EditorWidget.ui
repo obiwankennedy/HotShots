@@ -484,7 +484,7 @@
          </property>
         </widget>
        </item>
-       <item row="10" column="0" colspan="2">
+       <item row="11" column="0" colspan="2">
         <widget class="QClickLabel" name="labelFontSize">
          <property name="maximumSize">
           <size>
@@ -506,6 +506,27 @@
          </property>
         </widget>
        </item>
+
+       <item row="10" column="0">
+        <widget class="QToolButton" name="toolButtonLineArrow">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>22</width>
+           <height>22</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+
       </layout>
      </widget>
     </item>
@@ -703,6 +724,24 @@
    </property>
    <property name="toolTip">
     <string>Draw a simple line</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true"/>
+   </property>
+  </action>
+  <action name="actionLineArrow">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../res/hotshots.qrc">
+     <normaloff>:/editor/editor/line.png</normaloff>:/editor/editor/line.png</iconset>
+   </property>
+   <property name="text">
+    <string>Line Arrow item</string>
+   </property>
+   <property name="toolTip">
+    <string>Draw a simple line with arrow</string>
    </property>
    <property name="shortcut">
     <string notr="true"/>

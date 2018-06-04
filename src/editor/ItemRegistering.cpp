@@ -20,8 +20,8 @@
 
 #include "ItemRegistering.h"
 #include "ItemFactory.h"
-
 #include "EditorLineItem.h"
+#include "EditorLineArrowItem.h"
 #include "EditorArrowItem.h"
 #include "EditorTagItem.h"
 #include "EditorEncircleItem.h"
@@ -83,6 +83,10 @@ int ItemRegistering::allRegister(ItemFactory *factoryInstance)
 
     static ItemFactoryTemplate<EditorCropItem> typeCrop_;
     static ItemFactoryRegister o("EditorCropItem", &typeCrop_, factoryInstance);
+
+    static ItemFactoryTemplate<EditorLineArrowItem> typeLineArrow_;
+    static ItemFactoryRegister p("EditorLineArrowItem", &typeLineArrow_, factoryInstance);
+
 
     return factoryInstance->types().size();
 }

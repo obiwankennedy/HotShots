@@ -2,3 +2,10 @@
 256.ico
 *.qm
 html
+debug
+release
+/Makefile
+/Makefile.Debug
+/Makefile.Release
+/object_script.hotshots.Debug
+/object_script.hotshots.Release
