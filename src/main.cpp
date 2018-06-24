@@ -1,7 +1,7 @@
-
 /******************************************************************************
    HotShots: Screenshot utility
    Copyright(C) 2011-2014  xbee@xbee.net
+   2017-2018
 
    This program is free software; you can redistribute it and/or
    modify it under the terms of the GNU General Public License
@@ -21,9 +21,11 @@
 #include <QtCore/QTextStream>
 
 #include <QApplication>
-//#include <QPlastiqueStyle>
+
 #include <QDesktopWidget>
 #include <QMessageBox>
+#include <QCommandLineOption>
+#include <QCommandLineParser>
 
 #include "MainWindow.h"
 #include "SingleApplication.h"
@@ -52,21 +54,7 @@ void qSleep(int ms)
 #endif
 }
 
-void usage()
-{
-    QTextStream out(stdout);
-    out << endl;
-    out << QObject::tr("Screenshot management and annotation tool") << endl;
-    out << QObject::tr("Usage: ") << QCoreApplication::arguments().at(0) << " " << QObject::tr("[options] [file]") << endl;
-    out << endl;
-    out << QObject::tr("Following options are available:") << endl;
-    out << QObject::tr(" --help                 : displays this help.") << endl;
-    out << QObject::tr(" --reset-config         : clear the saved preference parameters.") << endl;
-    out << QObject::tr(" --no-singleinstance    : enable the use of multiple instance of program (not recommended).") << endl;
-    out << QObject::tr(" --portable             : use settings file location near the executable (for portable use).") << endl;
-    out << QObject::tr(" file                   : file to load in the editor, can be a .hot file or an image file.") << endl;
-    out << endl;
-}
+
 
 int main(int argc, char *argv[])
 {
@@ -76,6 +64,7 @@ int main(int argc, char *argv[])
 
     SingleApplication app(argc, argv, PACKAGE_NAME);
     app.setQuitOnLastWindowClosed(false); // because of systray
+    app.setApplicationVersion(QStringLiteral("2.2.0"));
 
     // add possible image plugin path
 #ifdef Q_OS_MAC
@@ -89,43 +78,52 @@ int main(int argc, char *argv[])
     // set default language for application (computed or saved)
     MiscFunctions::setDefaultLanguage();
 
-    // modifying base look (for mac it's a workaround strange layout result ????)
-/*#if defined(Q_OS_WIN) || defined(Q_OS_MAC)
-    QApplication::setStyle(new QPlastiqueStyle);
-#endif*/
-
     // check for special argument
     bool forceResetConfig = false;
     bool ignoreSingleInstance = false;
-    QStringList args = QApplication::arguments();
-    QString fileToLoad;
-    for ( int i = 1; i < args.count(); ++i )
-    {
-        const QString arg = args.at(i);
+    bool editorOnly = false;
+    QCommandLineOption resetOpt(QStringList() << "r" << "reset-config", "clear the saved preference parameters");
+    QCommandLineOption portablOpt(QStringList() << "p" << "portable", "clear the saved preference parameters");
+    QCommandLineOption nosingleOpt(QStringList() << "n" << "no-singleinstance", "clear the saved preference parameters");
+    QCommandLineOption fileOpt(QStringList() << "f" << "file", "clear the saved preference parameters");
+    QCommandLineOption editorOpt(QStringList() << "e" << "edit", "Start editor only");
 
-        if ( arg == "--reset-config" )
-        {
-            forceResetConfig = true;
-        }
-        else if ( arg == "--no-singleinstance" )
-        {
-            ignoreSingleInstance = true;
-        }
-        else if (arg == "--help")
-        {
-            usage();
-            return 0;
-        }
-        else if(arg == "--portable")
-        {
-            QSettings::setPath(QSettings::IniFormat, QSettings::UserScope, QApplication::applicationDirPath());
-            QSettings::setPath(QSettings::IniFormat, QSettings::SystemScope, QApplication::applicationDirPath());
-            QSettings::setDefaultFormat(QSettings::IniFormat);
-        }
-        else
-        {
-            fileToLoad = arg;
-        }
+
+    QString fileToLoad;
+    QCommandLineParser parser;
+    parser.addHelpOption();
+    parser.addVersionOption();
+    parser.addOption(resetOpt);
+    parser.addOption(portablOpt);
+    parser.addOption(nosingleOpt);
+    parser.addOption(editorOpt);
+    parser.addOption(fileOpt);
+
+    parser.parse(app.arguments());
+
+    if(parser.isSet(resetOpt))
+    {
+        forceResetConfig = true;
+    }
+    else if(parser.isSet(portablOpt))
+    {
+        QSettings::setPath(QSettings::IniFormat, QSettings::UserScope, QApplication::applicationDirPath());
+        QSettings::setPath(QSettings::IniFormat, QSettings::SystemScope, QApplication::applicationDirPath());
+        QSettings::setDefaultFormat(QSettings::IniFormat);
+    }
+    else if(parser.isSet(nosingleOpt))
+    {
+        ignoreSingleInstance = true;
+    }
+    else if(parser.isSet(editorOpt))
+    {
+        editorOnly = true;
+        ignoreSingleInstance = true;
+    }
+    else if(parser.isSet(fileOpt))
+    {
+        fileToLoad = parser.value(fileOpt);
+        ignoreSingleInstance = true;
     }
 
     // check for multiple instance of program
