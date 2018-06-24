@@ -1,5 +1,7 @@
 
-QT += core gui xml network widgets multimedia printsupport winextras
+QT += core gui xml network widgets multimedia printsupport
+win32:QT +=winextras
+unix:!macx:QT += x11extras
 
 CONFIG += ordered debug_and_release
 
@@ -263,6 +265,7 @@ macx:RESOURCES += res/osx/hotshots.qrc
 !macx:RESOURCES += res/hotshots.qrc
 
 win32:LIBS += -lgdi32
+
 macx:LIBS += -framework  Carbon
 unix:!macx:LIBS+= -lX11 -lXfixes
 #isEmpty(BUNDLE):unix:!macx:LIBS+= -lQxtGui
