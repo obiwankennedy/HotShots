@@ -27,6 +27,7 @@
 #include <QStyledItemDelegate>
 #include <QHeaderView>
 #include <QStandardItemModel>
+#include <QAction>
 //#include <QPlastiqueStyle>
 
 
