@@ -337,43 +337,43 @@ macx {
 #    lrelease.CONFIG       += no_link target_predeps
 #}
 
-#unix:!macx {
+unix:!macx {
 
-#    # add auto compilation of .ts files
-#    QMAKE_EXTRA_COMPILERS += lrelease
-#    lrelease.input         = TRANSLATIONS
-#    lrelease.output        = ${QMAKE_FILE_BASE}.qm
-#    lrelease.commands      = $$[QT_INSTALL_BINS]/lrelease ${QMAKE_FILE_IN} -qm lang/${QMAKE_FILE_BASE}.qm
-#    lrelease.CONFIG       += no_link target_predeps
+    # add auto compilation of .ts files
+    QMAKE_EXTRA_COMPILERS += lrelease
+    lrelease.input         = TRANSLATIONS
+    lrelease.output        = ${QMAKE_FILE_BASE}.qm
+    lrelease.commands      = $$[QT_INSTALL_BINS]/lrelease ${QMAKE_FILE_IN} -qm $$PWD/lang/${QMAKE_FILE_BASE}.qm
+    lrelease.CONFIG       += no_link target_predeps
 
-#    # to copy executable to /usr/local/bin directory
-#    starter.files = ./release/hotshots
-#    starter.path = $$MYAPP_INSTALL_BINDIR
+    # to copy executable to /usr/local/bin directory
+    #starter.files = $${DESTDIR}/release/hotshots
+    target.path = $$MYAPP_INSTALL_BINDIR
 
-#    transl.files = lang/*.qm
-#    transl.path = $$MYAPP_INSTALL_TRANS
+    transl.files = $$PWD/lang/*.qm
+    transl.path = $$MYAPP_INSTALL_TRANS
     
-#    data.files += CREDITS.txt README.txt AUTHORS.txt Changelog.txt
-#    data.path = $$MYAPP_INSTALL_DATA
+    data.files += CREDITS.txt README.txt AUTHORS.txt Changelog.txt
+    data.path = $$MYAPP_INSTALL_DATA
 
-#    # generate desktop file
-#    VERSION = $$system(grep VERSION src/AppSettings.h | awk \' { print $NF }\' | sed   \'s/\"//g\')
-#    system( sh  build/hotshots-desktop.sh  $$INSTALL_PREFIX $$VERSION > hotshots.desktop )
-#    desktop.files += hotshots.desktop
-#    desktop.path = $$MYAPP_INSTALL_DESKTOP
+    # generate desktop file
+    VERSION = $$system(grep VERSION src/AppSettings.h | awk \' { print $NF }\' | sed   \'s/\"//g\')
+    system( sh  packaging/hotshots-desktop.sh  $$INSTALL_PREFIX $$VERSION > hotshots.desktop )
+    desktop.files += hotshots.desktop
+    desktop.path = $$MYAPP_INSTALL_DESKTOP
 
-#    icons.files += res/hotshots.png
-#    icons.path = $$MYAPP_INSTALL_PIXMAPS
+    icons.files += res/hotshots.png
+    icons.path = $$MYAPP_INSTALL_PIXMAPS
     
-#    mimetype.files += hotshots.xml
-#    mimetype.path = $$MYAPP_INSTALL_MIMETYPE
+    mimetype.files += hotshots.xml
+    mimetype.path = $$MYAPP_INSTALL_MIMETYPE
     
-#    # generate manpage
-#    system( sh  build/hotshots-manpage.sh > hotshots.1 )
-#    system( gzip -9 -f hotshots.1  )
-#    manual.files += hotshots.1.gz
-#    manual.path = $$MYAPP_INSTALL_MAN
+    # generate manpage
+    system( sh  packaging/hotshots-manpage.sh > hotshots.1 )
+    system( gzip -9 -f hotshots.1  )
+    manual.files += hotshots.1.gz
+    manual.path = $$MYAPP_INSTALL_MAN
 
-#    INSTALLS += starter transl data desktop icons manual mimetype
-#}
+    INSTALLS += target transl data desktop icons manual mimetype
+}
 
