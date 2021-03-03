@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=HotShots
+Comment=Screenshot and Annotation editor
+Type=Application
+GenericName=Screenshot and Annotation editor
+Exec=/app/bin/hotshots
+Categories=Application;
+Icon=io.github.HotShots
+MimeType=application/x-hot;
