@@ -18,24 +18,24 @@
    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
  *******************************************************************************/
 
-#include <QtCore/QDir>
 #include <QtCore/QCoreApplication>
-#include <QtCore/QLocale>
-#include <QtCore/QLibraryInfo>
-#include <QtCore/QTranslator>
 #include <QtCore/QDebug>
+#include <QtCore/QDir>
+#include <QtCore/QLibraryInfo>
+#include <QtCore/QLocale>
+#include <QtCore/QTranslator>
 
 #include <QApplication>
-#include <QStandardPaths>
-#include <QPixmap>
-#include <QPainter>
+#include <QImage>
 #include <QImageReader>
 #include <QImageWriter>
-#include <QImage>
+#include <QPainter>
+#include <QPixmap>
+#include <QStandardPaths>
 
-#include "MiscFunctions.h"
-#include "LogHandler.h"
 #include "AppSettings.h"
+#include "LogHandler.h"
+#include "MiscFunctions.h"
 
 QString MiscFunctions::getValidStorage()
 {
@@ -50,16 +50,16 @@ QString MiscFunctions::getValidStorage()
 
 QStringList MiscFunctions::getAvailablesImageFormatsListForWriting()
 {
-    QList<QByteArray> supportedFormats = QImageWriter::supportedImageFormats();
+    QList<QByteArray> supportedFormats= QImageWriter::supportedImageFormats();
     QStringList result;
     QListIterator<QByteArray> supportedFormat(supportedFormats);
     QByteArray format;
 
-    while ( supportedFormat.hasNext() )
+    while(supportedFormat.hasNext())
     {
-        format = supportedFormat.next().toLower();
+        format= supportedFormat.next().toLower();
 
-        if ( !result.contains(format) )
+        if(!result.contains(format))
             result << format;
     }
 
@@ -68,16 +68,16 @@ QStringList MiscFunctions::getAvailablesImageFormatsListForWriting()
 
 QStringList MiscFunctions::getAvailablesImageFormatsList()
 {
-    QList<QByteArray> supportedFormats = QImageReader::supportedImageFormats();
+    QList<QByteArray> supportedFormats= QImageReader::supportedImageFormats();
     QStringList result;
     QListIterator<QByteArray> supportedFormat(supportedFormats);
     QByteArray format;
 
-    while ( supportedFormat.hasNext() )
+    while(supportedFormat.hasNext())
     {
-        format = supportedFormat.next().toLower();
+        format= supportedFormat.next().toLower();
 
-        if ( !result.contains(format) )
+        if(!result.contains(format))
             result << format;
     }
 
@@ -89,9 +89,9 @@ QStringList MiscFunctions::getAvailablesImageFormatsList()
  * Copyright (C) 2009  Antonio Di Monaco <tony@becrux.com>
  */
 
-QMap<QString, QString> MiscFunctions::getLongImageFormats()
+QHash<QString, QString> MiscFunctions::getLongImageFormats()
 {
-    QMap<QString, QString> formats;
+    QHash<QString, QString> formats;
 
     /*
        BMP files [reading, writing]
@@ -127,78 +127,78 @@ QMap<QString, QString> MiscFunctions::getLongImageFormats()
        XPM files [reading, writing]
      */
 
-    formats["bw"] = "Black & White";
-    formats["eps"] = "Encapsulated Postscript";
-    formats["epsf"] = "Encapsulated PostScript";
-    formats["epsi"] = "Encapsulated PostScript Interchange";
-    formats["exr"] = "OpenEXR";
-    formats["pcx"] = "PC Paintbrush Exchange";
-    formats["psd"] = "Photoshop Document";
-    formats["rgb"] = "Raw red, green, and blue samples";
-    formats["rgba"] = "Raw red, green, blue, and alpha samples";
-    formats["sgi"] = "Irix RGB";
-    formats["tga"] = "Truevision Targa";
-    formats["xcf"] = "eXperimental Computing Facility (GIMP)";
-    formats["dds"] = "DirectDraw Surface";
-    formats["xv"] = "Khoros Visualization";
-    formats["bmp"] = "Windows Bitmap";
-    formats["gif"] = "Graphic Interchange Format";
-    formats["jpg"] = "Joint Photographic Experts Group";
-    formats["jpeg"] = "Joint Photographic Experts Group";
-    formats["jp2"] = "Joint Photographic Experts Group 2000";
-    formats["mng"] = "Multiple-image Network Graphics";
-    formats["png"] = "Portable Network Graphics";
-    formats["pbm"] = "Portable Bitmap";
-    formats["pgm"] = "Portable Graymap";
-    formats["ppm"] = "Portable Pixmap";
-    formats["tiff"] = "Tagged Image File Format";
-    formats["tif"] = "Tagged Image File Format";
-    formats["xbm"] = "X11 Bitmap";
-    formats["xpm"] = "X11 Pixmap";
-    formats["ico"] = "Icon Image";
-    formats["svg"] = "Scalable Vector Graphics";
+    formats["bw"]= "Black & White";
+    formats["eps"]= "Encapsulated Postscript";
+    formats["epsf"]= "Encapsulated PostScript";
+    formats["epsi"]= "Encapsulated PostScript Interchange";
+    formats["exr"]= "OpenEXR";
+    formats["pcx"]= "PC Paintbrush Exchange";
+    formats["psd"]= "Photoshop Document";
+    formats["rgb"]= "Raw red, green, and blue samples";
+    formats["rgba"]= "Raw red, green, blue, and alpha samples";
+    formats["sgi"]= "Irix RGB";
+    formats["tga"]= "Truevision Targa";
+    formats["xcf"]= "eXperimental Computing Facility (GIMP)";
+    formats["dds"]= "DirectDraw Surface";
+    formats["xv"]= "Khoros Visualization";
+    formats["bmp"]= "Windows Bitmap";
+    formats["gif"]= "Graphic Interchange Format";
+    formats["jpg"]= "Joint Photographic Experts Group";
+    formats["jpeg"]= "Joint Photographic Experts Group";
+    formats["jp2"]= "Joint Photographic Experts Group 2000";
+    formats["mng"]= "Multiple-image Network Graphics";
+    formats["png"]= "Portable Network Graphics";
+    formats["pbm"]= "Portable Bitmap";
+    formats["pgm"]= "Portable Graymap";
+    formats["ppm"]= "Portable Pixmap";
+    formats["tiff"]= "Tagged Image File Format";
+    formats["tif"]= "Tagged Image File Format";
+    formats["xbm"]= "X11 Bitmap";
+    formats["xpm"]= "X11 Pixmap";
+    formats["ico"]= "Icon Image";
+    formats["svg"]= "Scalable Vector Graphics";
 
     return formats;
 }
 
 QString MiscFunctions::getAvailablesImageFormatsForWriting()
 {
-    QString imglist ="Images (";
-    QStringList formats = getAvailablesImageFormatsListForWriting();
-    for (int i = 0; i < formats.size(); ++i)
-        imglist += "Images"+ formats[i]+"( *." + formats[i]+");;";
+    QString imglist;
+    QStringList formats= getAvailablesImageFormatsListForWriting();
 
+    for(auto const& format : qAsConst(formats))
+        imglist+= QStringLiteral("Images %1 (*.%1);;").arg(format);
 
-    qDebug()<< "imglist getAvailablesImageFormatsForWriting"<< imglist;
+    qDebug() << "imglist getAvailablesImageFormatsForWriting" << imglist;
     return imglist;
 }
 
 QString MiscFunctions::getAvailablesImageFormats()
 {
-    QString imglist ="Images (";
-    QStringList formats = getAvailablesImageFormatsList();
-    for (int i = 0; i < formats.size(); ++i)
-        imglist += " *." + formats[i];
+    QString imglist= "Images (";
+    QStringList formats= getAvailablesImageFormatsList();
+    for(int i= 0; i < formats.size(); ++i)
+        imglist+= " *." + formats[i];
 
     imglist.append(");;");
 
-    qDebug()<< "imglist"<< imglist;
+    qDebug() << "imglist" << imglist;
     return imglist;
 }
 
-QString MiscFunctions::getTranslationsFile(const QString &lang)
+QString MiscFunctions::getTranslationsFile(const QString& lang)
 {
     return QString("%1_%2.qm").arg(PACKAGE_NAME).arg(lang).toLower();
 }
 
-QString MiscFunctions::getTranslationsPath(const QString &refLang)
+QString MiscFunctions::getTranslationsPath(const QString& refLang)
 {
     // search in application path
     QStringList ldir;
-    ldir << QCoreApplication::applicationDirPath () + "/lang";
-    ldir << QCoreApplication::applicationDirPath () + "/../lang";
-    ldir << QCoreApplication::applicationDirPath () + "/../../lang";
-    ldir << QCoreApplication::applicationDirPath () + "/../translations"; // MacOSX
+    ldir << QCoreApplication::applicationDirPath() + "/lang";
+    ldir << QCoreApplication::applicationDirPath() + "/../lang";
+    ldir << QCoreApplication::applicationDirPath() + "/../../lang";
+    ldir << QCoreApplication::applicationDirPath() + "/../translations"; // MacOSX
     ldir << QString("/usr/share/%1/locale").arg(PACKAGE_NAME).toLower();
     ldir << QString("/usr/local/share/%1/locale").arg(PACKAGE_NAME).toLower();
     ldir << "/usr/local/share/locale";
@@ -206,12 +206,12 @@ QString MiscFunctions::getTranslationsPath(const QString &refLang)
     ldir << "/usr/share/locale";
 
     QString ext;
-    if ( !refLang.isEmpty() )
-        ext = "/" + getTranslationsFile(refLang);
+    if(!refLang.isEmpty())
+        ext= "/" + getTranslationsFile(refLang);
 
-    foreach (const QString &dir, ldir)
+    foreach(const QString& dir, ldir)
     {
-        if ( QFileInfo(dir + ext).exists() )
+        if(QFileInfo(dir + ext).exists())
             return dir;
     }
 
@@ -221,27 +221,27 @@ QString MiscFunctions::getTranslationsPath(const QString &refLang)
 QMap<QString, QString> MiscFunctions::getAvailableLanguages()
 {
     QMap<QString, QString> languageMap;
-    QDir dir( MiscFunctions::getTranslationsPath("fr") );
-    QRegExp expr( QString("^%1_(\\w+)\\.qm$").arg(PACKAGE_NAME).toLower() );
-    QStringList files = dir.entryList(QDir::Files, QDir::Name);
+    QDir dir(MiscFunctions::getTranslationsPath("fr"));
+    QRegExp expr(QString("^%1_(\\w+)\\.qm$").arg(PACKAGE_NAME).toLower());
+    QStringList files= dir.entryList(QDir::Files, QDir::Name);
 
-    LogHandler::getInstance()->reportDebug( QObject::tr("Translations path %1").arg( dir.path() ) );
+    LogHandler::getInstance()->reportDebug(QObject::tr("Translations path %1").arg(dir.path()));
 
-    foreach ( const QString &file, files )
+    foreach(const QString& file, files)
     {
-        if ( !file.contains(expr) )
+        if(!file.contains(expr))
             continue;
 
-        QString lang = expr.cap(1);
-        QString name = QString("%1 (%2)").arg(QLocale::languageToString( QLocale(lang).language() ), lang);
+        QString lang= expr.cap(1);
+        QString name= QString("%1 (%2)").arg(QLocale::languageToString(QLocale(lang).language()), lang);
 
-        if (lang.contains("_")) // detect variant
+        if(lang.contains("_")) // detect variant
         {
-            QString country = QLocale::countryToString(QLocale(lang).country());
-            name = QString("%1 (%2) (%3)").arg(QLocale::languageToString( QLocale(lang).language() ), country, lang);
+            QString country= QLocale::countryToString(QLocale(lang).country());
+            name= QString("%1 (%2) (%3)").arg(QLocale::languageToString(QLocale(lang).language()), country, lang);
         }
 
-        languageMap[name] = lang;
+        languageMap[name]= lang;
     }
     return languageMap;
 }
@@ -252,41 +252,42 @@ void MiscFunctions::setDefaultLanguage()
     AppSettings settings;
 
     settings.beginGroup("Application");
-    lang = settings.value("currentLanguage","auto").toString();
+    lang= settings.value("currentLanguage", "auto").toString();
     settings.endGroup();
 
-    if ( lang.isEmpty() )
-        lang = QLocale::system().name().left(2);
+    if(lang.isEmpty())
+        lang= QLocale::system().name().left(2);
 
-    if ( !lang.isEmpty() )
+    if(!lang.isEmpty())
         setLanguage(lang);
 }
 
 void MiscFunctions::setLanguage(const QString& lang)
 {
     QString language(lang);
-    LogHandler::getInstance()->reportDebug( QObject::tr("Setting language to: %1").arg(language) );
+    LogHandler::getInstance()->reportDebug(QObject::tr("Setting language to: %1").arg(language));
 
     // special cases
-    if (language == "auto") // auto detection
+    if(language == "auto") // auto detection
     {
-        language = QLocale::system().name().left(2);
+        language= QLocale::system().name().left(2);
     }
-    else if (language == "default") // no use of translator
+    else if(language == "default") // no use of translator
     {
         return;
     }
 
     // try load the qt translator for selected language
-    QTranslator *qt = new QTranslator();
+    QTranslator* qt= new QTranslator();
     QStringList excludedFiles;
-    QString globalTranslationPath = QLibraryInfo::location(QLibraryInfo::TranslationsPath);
-    if ( !QFileInfo(globalTranslationPath).exists() )
-        globalTranslationPath = MiscFunctions::getTranslationsPath("fr");
+    QString globalTranslationPath= QLibraryInfo::location(QLibraryInfo::TranslationsPath);
+    if(!QFileInfo(globalTranslationPath).exists())
+        globalTranslationPath= MiscFunctions::getTranslationsPath("fr");
 
-    if ( qt->load( "qt_" + language, globalTranslationPath ) )
+    if(qt->load("qt_" + language, globalTranslationPath))
     {
-        LogHandler::getInstance()->reportDebug( QObject::tr("Successfully loaded data from %1").arg( globalTranslationPath + "/qt_" + language ) );
+        LogHandler::getInstance()->reportDebug(
+            QObject::tr("Successfully loaded data from %1").arg(globalTranslationPath + "/qt_" + language));
         QCoreApplication::installTranslator(qt);
         excludedFiles << "qt_" + language + ".qm";
     }
@@ -295,24 +296,25 @@ void MiscFunctions::setLanguage(const QString& lang)
         delete qt;
     }
 
-    QString suff = language + ".qm";
-    QDir dir( MiscFunctions::getTranslationsPath("fr") );
+    QString suff= language + ".qm";
+    QDir dir(MiscFunctions::getTranslationsPath("fr"));
 
-    foreach ( const QString &s, dir.entryList(QDir::Files | QDir::Readable) )
+    foreach(const QString& s, dir.entryList(QDir::Files | QDir::Readable))
     {
-        if ( !s.endsWith(suff) || excludedFiles.contains(s) )
+        if(!s.endsWith(suff) || excludedFiles.contains(s))
             continue;
-        QTranslator *t = new QTranslator();
+        QTranslator* t= new QTranslator();
 
-        if ( t->load( dir.filePath(s) ) )
+        if(t->load(dir.filePath(s)))
         {
             QCoreApplication::installTranslator(t);
-            LogHandler::getInstance()->reportDebug( QObject::tr("Successfully loaded data from %1").arg( dir.filePath(s) ) );
+            LogHandler::getInstance()->reportDebug(
+                QObject::tr("Successfully loaded data from %1").arg(dir.filePath(s)));
         }
         else
         {
             delete t;
-            LogHandler::getInstance()->reportDebug( QObject::tr("Failed to load data from %1").arg( dir.filePath(s) ) );
+            LogHandler::getInstance()->reportDebug(QObject::tr("Failed to load data from %1").arg(dir.filePath(s)));
         }
     }
 }
@@ -326,7 +328,7 @@ void MiscFunctions::updateApplicationIdentity()
 
 int MiscFunctions::random(int min, int max)
 {
-    return qrand() % ( (max + 1) - min ) + min;
+    return qrand() % ((max + 1) - min) + min;
 }
 
 int MiscFunctions::random(int max)
@@ -334,25 +336,25 @@ int MiscFunctions::random(int max)
     return qrand() % (max + 1);
 }
 
-QString MiscFunctions::base64Encode(const QString &str)
+QString MiscFunctions::base64Encode(const QString& str)
 {
     QByteArray ba;
     ba.append(str);
     return ba.toBase64();
 }
 
-QString MiscFunctions::base64Decode(const QString &str)
+QString MiscFunctions::base64Decode(const QString& str)
 {
     QByteArray ba;
     ba.append(str);
     return QByteArray::fromBase64(ba);
 }
 
-QString MiscFunctions::HTMLToText(const QString &t )
+QString MiscFunctions::HTMLToText(const QString& t)
 {
-    QString text = t;
+    QString text= t;
 
-    text.replace("&quot;","\"");
+    text.replace("&quot;", "\"");
     text.replace("&apos;", "'");
     text.replace("&lt;", "<");
     text.replace("&gt;", ">");
@@ -362,11 +364,11 @@ QString MiscFunctions::HTMLToText(const QString &t )
     return text;
 }
 
-QString MiscFunctions::TextToHTML(const QString &t )
+QString MiscFunctions::TextToHTML(const QString& t)
 {
-    QString text = t;
+    QString text= t;
 
-    text.replace("\"","&quot;");
+    text.replace("\"", "&quot;");
     text.replace("'", "&apos;");
     text.replace("<", "&lt;");
     text.replace(">", "&gt;");
@@ -376,12 +378,12 @@ QString MiscFunctions::TextToHTML(const QString &t )
     return text;
 }
 
-QPixmap MiscFunctions::applyAlpha(const QPixmap &pix,const QColor &bgColor)
+QPixmap MiscFunctions::applyAlpha(const QPixmap& pix, const QColor& bgColor)
 {
-    QPixmap newPix( pix.size() );
+    QPixmap newPix(pix.size());
     newPix.fill(bgColor);
     QPainter painter(&newPix);
-    painter.drawPixmap(0,0,pix);
+    painter.drawPixmap(0, 0, pix);
     return newPix;
 }
 
@@ -389,52 +391,54 @@ void MiscFunctions::setRunOnStartup(bool runOnStartup)
 {
 #ifdef Q_OS_WIN
 
-    QSettings regSettings("HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Run", QSettings::NativeFormat);
+    QSettings regSettings("HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+                          QSettings::NativeFormat);
 
-    if (runOnStartup)
-        regSettings.setValue( PACKAGE_NAME,QDir::toNativeSeparators( QCoreApplication::applicationFilePath () ) );
+    if(runOnStartup)
+        regSettings.setValue(PACKAGE_NAME, QDir::toNativeSeparators(QCoreApplication::applicationFilePath()));
     else
         regSettings.remove(PACKAGE_NAME);
 #endif
 #ifdef Q_OS_LINUX
-    QString desktopFileContents = QString("[Desktop Entry]\n"
-                                          "Name=%1\n"
-                                          "Comment=%2\n"
-                                          "Icon=%3\n"
-                                          "Type=Application\n"
-                                          "Exec=%4\n"
-                                          "Hidden=false\n"
-                                          "NoDisplay=false\n"
-                                          "X-GNOME-Autostart-enabled=true\n")
-                                      .arg(PACKAGE_NAME)
-                                      .arg(PACKAGE_DESCRIPTION)
-                                      .arg( QString(PACKAGE_NAME).toLower() )
-                                      .arg( QDir::toNativeSeparators( QCoreApplication::applicationFilePath() ) );
+    QString desktopFileContents= QString("[Desktop Entry]\n"
+                                         "Name=%1\n"
+                                         "Comment=%2\n"
+                                         "Icon=%3\n"
+                                         "Type=Application\n"
+                                         "Exec=%4\n"
+                                         "Hidden=false\n"
+                                         "NoDisplay=false\n"
+                                         "X-GNOME-Autostart-enabled=true\n")
+                                     .arg(PACKAGE_NAME)
+                                     .arg(PACKAGE_DESCRIPTION)
+                                     .arg(QString(PACKAGE_NAME).toLower())
+                                     .arg(QDir::toNativeSeparators(QCoreApplication::applicationFilePath()));
 
     QString autostartLocation;
-    char* xgdConfigHome = getenv("XDG_CONFIG_HOME");
+    char* xgdConfigHome= getenv("XDG_CONFIG_HOME");
     if(xgdConfigHome != NULL)
-        autostartLocation = QString(QString(xgdConfigHome) + "/.config/autostart");
+        autostartLocation= QString(QString(xgdConfigHome) + "/.config/autostart");
     else
-        autostartLocation = QString(QDir::homePath() + "/.config/autostart");
+        autostartLocation= QString(QDir::homePath() + "/.config/autostart");
 
     QDir d;
     d.mkpath(autostartLocation);
-    QFile autostartFile( autostartLocation + QString("/%1.desktop").arg( QString(PACKAGE_NAME).toLower() ) );
+    QFile autostartFile(autostartLocation + QString("/%1.desktop").arg(QString(PACKAGE_NAME).toLower()));
     if(runOnStartup)
     {
-        if( !autostartFile.exists() )
+        if(!autostartFile.exists())
         {
             qDebug() << "Installing autostart file to " << autostartLocation;
             autostartFile.open(QFile::WriteOnly);
-            autostartFile.write( desktopFileContents.toLocal8Bit() );
+            autostartFile.write(desktopFileContents.toLocal8Bit());
             autostartFile.close();
         }
-        autostartFile.setPermissions(QFile::ReadOwner | QFile::WriteOwner | QFile::ExeOwner | QFile::ReadGroup | QFile::WriteGroup | QFile::ReadOther);
+        autostartFile.setPermissions(QFile::ReadOwner | QFile::WriteOwner | QFile::ExeOwner | QFile::ReadGroup
+                                     | QFile::WriteGroup | QFile::ReadOther);
     }
     else
     {
-        if( autostartFile.exists() )
+        if(autostartFile.exists())
         {
             qDebug() << "Removing autostart file " << autostartFile.fileName();
             autostartFile.remove();

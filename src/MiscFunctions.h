@@ -26,36 +26,36 @@
 class MiscFunctions
 {
 public:
+  // give a valid directory for temporary files
+  static QString getValidStorage();
 
-    // give a valid directory for temporary files
-    static QString getValidStorage();
+  // images function
+  static QString getAvailablesImageFormats();
+  static QString getAvailablesImageFormatsForWriting();
+  static QStringList getAvailablesImageFormatsList();
+  static QStringList getAvailablesImageFormatsListForWriting();
+  static QHash<QString, QString> getLongImageFormats();
 
-    // images function
-    static QString getAvailablesImageFormats();
-    static QString getAvailablesImageFormatsForWriting();
-    static QStringList getAvailablesImageFormatsList();
-    static QStringList getAvailablesImageFormatsListForWriting();
-    static QMap<QString, QString> getLongImageFormats();
+  // translations functions
+  static QString getTranslationsPath(const QString &refLang = QString());
+  static QString getTranslationsFile(const QString &lang);
+  static QMap<QString, QString> getAvailableLanguages();
+  static void setDefaultLanguage();
+  static void setLanguage(const QString &lang);
 
-    // translations functions
-    static QString getTranslationsPath( const QString &refLang = QString() );
-    static QString getTranslationsFile(const QString &lang);
-    static QMap<QString, QString> getAvailableLanguages();
-    static void setDefaultLanguage();
-    static void setLanguage(const QString& lang);
+  static void updateApplicationIdentity();
+  static int random(int max);
+  static int random(int min, int max);
 
-    static void updateApplicationIdentity();
-    static int random(int max);
-    static int random(int min, int max);
+  static QString base64Encode(const QString &str);
+  static QString base64Decode(const QString &str);
+  static QString HTMLToText(const QString &t);
+  static QString TextToHTML(const QString &t);
 
-    static QString base64Encode(const QString &str);
-    static QString base64Decode(const QString &str);
-    static QString HTMLToText(const QString &t );
-    static QString TextToHTML(const QString &t );
+  static QPixmap applyAlpha(
+      const QPixmap &, const QColor &bgColor = QColor(Qt::white));
 
-    static QPixmap applyAlpha( const QPixmap &, const QColor &bgColor = QColor(Qt::white) );
-
-    static void setRunOnStartup(bool runOnStartup);
+  static void setRunOnStartup(bool runOnStartup);
 };
 
 #endif // _MISCFUNCTIONS_H_
