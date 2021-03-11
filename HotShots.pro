@@ -3,7 +3,7 @@ QT += core gui xml network widgets multimedia printsupport
 win32:QT +=winextras
 unix:!macx:QT += x11extras
 
-CONFIG += ordered debug_and_release
+CONFIG += ordered debug_and_release c++11
 
 
 TARGET = hotshots

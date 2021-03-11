@@ -188,12 +188,12 @@ void AboutDialog::updateInfosImageFormats()
     // clear the current list
     listWidgetFormats->clear();
 
-    QStringList formats = MiscFunctions::getAvailablesImageFormatsList();
-    QMap<QString, QString> longFormats = MiscFunctions::getLongImageFormats();
+    QStringList formats= MiscFunctions::getAvailablesImageFormatsList();
+    auto longFormats= MiscFunctions::getLongImageFormats();
 
-    foreach (const QString &format, formats)
+    for(const auto& format : qAsConst(longFormats))
     {
-        if ( longFormats.contains(format) )
+        if(longFormats.contains(format))
             new QListWidgetItem(longFormats[format] + " (*." + format + ")", listWidgetFormats);
         else
             new QListWidgetItem(format, listWidgetFormats);
