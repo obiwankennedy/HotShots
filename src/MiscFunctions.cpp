@@ -166,8 +166,17 @@ QString MiscFunctions::getAvailablesImageFormatsForWriting()
     QString imglist;
     QStringList formats= getAvailablesImageFormatsListForWriting();
 
+    auto i= 0;
+    auto lastId= formats.size() - 1;
     for(auto const& format : qAsConst(formats))
-        imglist+= QStringLiteral("Images %1 (*.%1);;").arg(format);
+    {
+        if(i == lastId)
+            imglist+= QStringLiteral("Images %1 (*.%1)").arg(format);
+        else
+            imglist+= QStringLiteral("Images %1 (*.%1);;").arg(format);
+
+        ++i;
+    }
 
     qDebug() << "imglist getAvailablesImageFormatsForWriting" << imglist;
     return imglist;
