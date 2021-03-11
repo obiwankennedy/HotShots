@@ -427,7 +427,9 @@ void MainWindow::loadSettings()
     if(m_currentLanguage.isEmpty())
         m_currentLanguage= QLocale::system().name().left(2);
 
-    NameManager::lastSnapshotDirectory= settings.value("lastSnapshotDirectory", "/home").toString();
+    NameManager::lastSnapshotDirectory
+        = settings.value("lastSnapshotDirectory", QStandardPaths::writableLocation(QStandardPaths::PicturesLocation))
+              .toString();
     ui->lineEditOutputPath->setText(NameManager::lastSnapshotDirectory);
 
     m_autoCopyToClipboard= settings.value("autoCopyToClipboard", false).toBool();
